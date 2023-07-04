@@ -1,0 +1,115 @@
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+section{
+    display: flex;
+    justify-content: center;
+    
+    border: 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.container{
+    width: 95vw;
+    margin-top: 0;
+    display: flex;
+    backdrop-filter: blur(3px);
+    justify-content: space-between;
+    align-items: center;
+    padding:0px 10px;
+    height: auto;
+}
+
+.wrapper {
+    padding: 0.6em;
+    font-style: oblique;
+    font-family: 'Outfit', sans-serif;
+    font-size: medium;
+    letter-spacing: 6px;
+    border: 0;
+    border-radius: 30px;
+    
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, #232323,#232323, #353e47, #2b6f71, #3a3355);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    transition: background 500ms ease;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    &:focus {
+        outline: none;
+    }
+    &:hover{
+        background-position: 100% 0;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+}
+
+.list {
+    display: flex;
+    gap:20px;
+    list-style: none;
+    padding:20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.listItem {
+    cursor: pointer;  
+    padding-right: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: larger;
+    color: #c0c0c0;
+    transition: transform 0.3s ease;
+    &:hover{
+        color: #fff;
+        text-shadow: 0 0 5px #03e9f4,
+                    0 0 25px #03e9f4,
+                    0 0 50px #03e9f4,
+                    0 0 100px #03e9f4;
+        transform: translateY(-10px);
+    }
+}
+
+ 
+
+.links {
+    display: flex;
+    align-items: center;
+    gap:45px;
+}
+
+.button2{
+    padding: 10px;
+    font-style: oblique;
+    font-family: 'Outfit', sans-serif;
+    font-size: medium;
+    letter-spacing: 6px;
+    border: 0;
+    border-radius: 30px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(43, 111, 113, 0.8);
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    transition: background-color 500ms, border-color 400ms; 
+    &:hover{
+        background-color: rgba(50, 118, 120, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
