@@ -2,6 +2,7 @@ import React from 'react'
 import "../Components/home.scss"
 import styled from 'styled-components'
 import Dna from '../Components/Dna'
+import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial, Stage, Preload } from "@react-three/drei";
 
@@ -95,7 +96,7 @@ const Sidebar = styled.div`
   position: relative;
   align-items: center;
   flex-direction: column;
-  background-color:rgba(0,0,0,0.3);
+  background-color:rgba(0,0,0,0.2);
   border:1px solid rgba(255,255,255,0.2);
   border-radius:30px;
   justify-content: space-evenly;
@@ -109,7 +110,7 @@ const Sidebar = styled.div`
   transition: all 500ms ease-in-out;
   &:hover{
     padding:20px;
-    
+    background-color:rgba(0,0,0,0.3);
   }
 `
 
@@ -142,7 +143,7 @@ const Cimg = styled.img`
   border-radius:80px;
   height:60px;
   width:60px;
-  gap:10px;
+  gap:5px;
   align-items: center;
   margin:0px 0px 0px 0px;
   transition: all 500ms ease-in-out;
@@ -172,12 +173,14 @@ const Home = () => {
             <Desc>Decentralizing Patient Data through </Desc>
             <Title>MedBuddy</Title>
             <Subtitle>Welcome to our company where we are dedicated to help and innovate</Subtitle>
-            <button className="learn-more">
-              <div className="circle">
-                <span className="icon arrow"></span>
-              <p className="button-text">Learn More</p>
-              </div>
-            </button>
+            <Link to="/Download">
+              <button className="learn-more">
+                <div className="circle">
+                  <span className="icon arrow"></span>
+                <p className="button-text">Learn More</p>
+                </div>
+              </button>
+            </Link>
           </div>
         </Left>
         <Right>
@@ -188,12 +191,13 @@ const Home = () => {
             <ListItem onClick={() => window.open("https://www.reddit.com/")}>Reddit</ListItem>
           </List>
         </Sidebar>
-          <Canvas style={{paddingLeft:"10px"}}>
-            <Stage environment="city" intensity={20} adjustCamera={0.6}>
+          <Canvas style={{paddingLeft:"10px",cursor:"grab"}}>
+            <Stage environment="city" intensity={30} adjustCamera={0.6}>
               <Dna/>
             </Stage>
             <OrbitControls enableZoom={false} autoRotate={false} />
           </Canvas>
+          <div></div>
         </Right>
       </Container>
       <CardContainer>

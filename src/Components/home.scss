@@ -3,7 +3,7 @@
   }
 
   $white: #fff;
-  $black: #282936;
+  $black: rgba(40, 41, 54,0.3);
 
 button {
     position: relative;
@@ -23,6 +23,7 @@ button {
       border-radius: 2.5rem;
       width: 12rem;
       height: auto;
+      background-color: rgba(10,10,10,0.1);
       .circle {
         @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
         position: relative;
@@ -79,6 +80,7 @@ button {
     &:hover {
       .circle {
         width: 100%;
+        background-color: rgba(40, 41, 54,0.9);
         .icon {
           &.arrow {
           background: $white;
