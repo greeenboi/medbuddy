@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial, Stage, Preload } from "@react-three/drei";
 import { GiInfinity } from "react-icons/gi"
+import { BsArrowRight } from "react-icons/bs"
 
 const Section = styled.section`
   height: 80vh;
@@ -62,16 +63,17 @@ const Right = styled.div`
 const Title = styled.h1`
   font-size: 120px;
   display: flex;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-style: oblique;
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
-  color: rgba(255,255,255,0.9);
-  font-weight: bold;
+  color: rgba(255,255,255,0.2);
+  font-weight: italcs;
   width: 90%;
   justify-content: center;
   align-items:center;
   text-align: left;
   padding-left:2rem;
+  -webkit-text-stroke: 2px rgba(10,10,10,0.5);
 `;
 
 const Desc = styled.h3`
@@ -142,7 +144,8 @@ const ListItem = styled.li`
 const Promote = styled.div`
   display: flex;
   justify-content: space-evenly;
-  gap:10px;
+  flex-direction: row;
+  gap:30px;
   align-items: center;
   position:absolute;
   right:15vw;
@@ -164,12 +167,39 @@ const Cimg = styled.img`
   margin:0px 0px 0px 0px;
   transition: all 500ms ease-in-out;
   box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
-  &:hover{
-    height:50px;
-    width:50px;
+  &:nth-child(1){
+    height:65px;
+    width:65px;
+  }
+  &:nth-child(1):hover{
+    height:60px;
+    width:60px;
     opacity:0.8;
     border: 4px solid rgba(255,255,255,0.2);
   }
+  &:hover{
+    height:50px;
+    width:50px;
+    opacity:0.7;
+    border: 4px solid rgba(255,255,255,0.2);
+  }
+`
+const Button = styled.button`
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+  background:rgba(0,0,0,0.3);
+  color:rgba(250, 241, 254,0.7);
+  border-radius:90px;
+  border:0;
+  transition:all 500ms ease;
+  &:hover{
+    padding:10px;
+    color:#fff;
+    gap:5px;
+  }
+
 `
 
 const Home = () => {
@@ -210,14 +240,18 @@ const Home = () => {
         </Sidebar>
         <Promote >
           <GiInfinity style={{height:"20px"}}/>  Partnering for a Better Future.
+          <Link to="/About">
+            <Button>
+              About Us
+              <BsArrowRight/>
+            </Button>
+            </Link>
         </Promote>
-          <Canvas style={{paddingLeft:"10px",cursor:"grab",position:"relative"}}>
+          <Canvas style={{left:"-20px",position:"relative"}}>
             <Stage environment="city" intensity={30} adjustCamera={0.6}>
               <Dna/>
             </Stage>
-            <OrbitControls enableZoom={false} autoRotate={false} />
           </Canvas>
-          
         </Right>
       </Container>
       <CardContainer>
