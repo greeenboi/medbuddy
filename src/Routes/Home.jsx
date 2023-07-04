@@ -115,9 +115,9 @@ const Sidebar = styled.div`
 
 const Card = styled.div`
   width:30%;
-  padding:1rem;
+  padding:0.5rem;
   display: inline-flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   backdrop-filter: blur(3px);
   background-color: rgba(255,255,255, 0.1);
@@ -140,10 +140,18 @@ const ListItem = styled.li`
 const Cimg = styled.img`
   border: 1px solid rgba(255,255,255,0.2);
   border-radius:80px;
-  height:100px;
-  width:100px;
+  height:60px;
+  width:60px;
+  gap:10px;
   align-items: center;
-
+  margin:0px 0px 0px 0px;
+  transition: all 500ms ease-in-out;
+  &:hover{
+    height:50px;
+    width:50px;
+    opacity:0.8;
+    border: 4px solid rgba(255,255,255,0.2);
+  }
 `
 
 const Home = () => {
@@ -191,10 +199,18 @@ const Home = () => {
       <CardContainer>
         <Card>
           <Cimg src="/woman.jpg"/>
-          "I love this product!!!!"
+          <Cimg src="/man2.jpg"/>
+          <Cimg src="/man1.jpg"/>
+          "100+ Happy Customers"
         </Card>
-        <Card>c2</Card>
-        <Card>c3</Card>
+        <Card>
+          
+          "This product is awesome!"
+        </Card>
+        <Card>
+          
+          "
+        </Card>
       </CardContainer>
     </Section>
   )
