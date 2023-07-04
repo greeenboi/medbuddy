@@ -5,6 +5,7 @@ import Dna from '../Components/Dna'
 import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Sphere, MeshDistortMaterial, Stage, Preload } from "@react-three/drei";
+import { GiInfinity } from "react-icons/gi"
 
 const Section = styled.section`
   height: 80vh;
@@ -138,6 +139,21 @@ const ListItem = styled.li`
     font-family: 'Lexend Deca', sans-serif;
 `;
 
+const Promote = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  gap:10px;
+  align-items: center;
+  position:absolute;
+  right:15vw;
+  padding:2rem;
+  background-color:rgba(255,255,255,0.125);
+  backdrop-filter:blur(2px);
+  border:0;
+  border-radius:10px;
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+`
+
 const Cimg = styled.img`
   border: 1px solid rgba(255,255,255,0.2);
   border-radius:80px;
@@ -147,6 +163,7 @@ const Cimg = styled.img`
   align-items: center;
   margin:0px 0px 0px 0px;
   transition: all 500ms ease-in-out;
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
   &:hover{
     height:50px;
     width:50px;
@@ -191,13 +208,16 @@ const Home = () => {
             <ListItem onClick={() => window.open("https://www.reddit.com/")}>Reddit</ListItem>
           </List>
         </Sidebar>
-          <Canvas style={{paddingLeft:"10px",cursor:"grab"}}>
+        <Promote >
+          <GiInfinity style={{height:"20px"}}/>  Partnering for a Better Future.
+        </Promote>
+          <Canvas style={{paddingLeft:"10px",cursor:"grab",position:"relative"}}>
             <Stage environment="city" intensity={30} adjustCamera={0.6}>
               <Dna/>
             </Stage>
             <OrbitControls enableZoom={false} autoRotate={false} />
           </Canvas>
-          <div></div>
+          
         </Right>
       </Container>
       <CardContainer>
