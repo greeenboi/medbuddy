@@ -9,7 +9,7 @@ import { GiInfinity } from "react-icons/gi"
 import { BsArrowRight } from "react-icons/bs"
 
 const Section = styled.section`
-  height: 80vh;
+  height: 180vh;
   width: 100vw;
   display: flex; 
   flex-direction: column;
@@ -26,6 +26,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
 
 const CardContainer = styled.div`
   height: auto;
@@ -254,22 +255,30 @@ const Home = () => {
           </Canvas>
         </Right>
       </Container>
-      <CardContainer>
-        <Card>
-          <Cimg src="/woman.jpg"/>
-          <Cimg src="/man2.jpg"/>
-          <Cimg src="/man1.jpg"/>
-          "100+ Happy Customers"
-        </Card>
-        <Card>
-          
-          "This product is awesome!"
-        </Card>
-        <Card>
-          
-          "
-        </Card>
-      </CardContainer>
+      <Container>
+        <Left>
+          Ad1
+        </Left>
+        <Right>
+          Ad2
+        </Right>
+      </Container>
+        <CardContainer>
+          <Card>
+            <Cimg src="/woman.jpg"/>
+            <Cimg src="/man2.jpg"/>
+            <Cimg src="/man1.jpg"/>
+            "100+ Happy Customers"
+          </Card>
+          <Card>
+            
+            "This product is awesome!"
+          </Card>
+          <Card>
+            
+            "
+          </Card>
+        </CardContainer>
     </Section>
   )
 }
